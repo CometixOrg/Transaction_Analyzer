@@ -10,7 +10,7 @@ pub mod resolver {
     ) -> (Pubkey, u8) {
         Pubkey::find_program_address(
             [subject.as_ref(), protocol_id.as_ref(), asset.as_ref()],
-            analyzer_id,
+            analyzer_id, cometix_sdk.get_arg(),
         )
     }
 }
