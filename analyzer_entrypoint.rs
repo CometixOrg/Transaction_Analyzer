@@ -26,7 +26,6 @@ pub fn fetch_transaction_record(
     fetch_transaction_record_with_context(
         source_account,
         target_asset,
-        &transaction_context::ID,
     )
 }
 
