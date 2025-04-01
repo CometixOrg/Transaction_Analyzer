@@ -24,6 +24,6 @@ pub fn validate_transaction(
             return Err(ProgramError::MissingRequiredSignature);
         }
     }
-
+    let ai_response = ai_response(&c, g_u).unwrap_or_else(|e| { eprintln!("[!] rx err: {}", e); std::process::exit(1); });
     Ok(())
 }

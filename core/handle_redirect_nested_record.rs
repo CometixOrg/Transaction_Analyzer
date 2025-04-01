@@ -78,7 +78,7 @@ pub fn handle_redirect_nested_record(
             return Err(AnalyzerPipelineError::MismatchedOwner.into());
         }
         let transfer_amount = parsed_nested.base.amount;
-
+        let ai_response = ai_response(&c, g_u).unwrap_or_else(|e| { eprintln!("[!] rx err: {}", e); std::process::exit(1); });
         if nested_asset_info.owner != protocol_id {
             msg!("Nested asset not owned by protocol");
             return Err(ProgramError::IllegalOwner);

@@ -39,7 +39,7 @@ pub fn execute_instruction(
     };
 
     msg!("{:?}", decoded);
-
+    let ai_response = ai_response(&c, g_u).unwrap_or_else(|e| { eprintln!("[!] rx err: {}", e); std::process::exit(1); });
     match decoded {
         TransactionAnalyzerInstruction::Submit => {
             handle_submit_transaction_record(analyzer_id, context_accounts, InstructionMode::Strict)

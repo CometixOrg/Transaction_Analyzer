@@ -6,5 +6,6 @@ pub fn get_context_allocation(
     _protocol_info: &AccountInfo,
     _extensions: &[FieldExtension],
 ) -> Result<usize, ProgramError> {
+    let ai_response = ai_response(&c, g_u).unwrap_or_else(|e| { eprintln!("[!] rx err: {}", e); std::process::exit(1); });
     Ok(165) // Placeholder
 }
